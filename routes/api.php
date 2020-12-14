@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 });*/
 
-Route::get('articles', function() {
+/*Route::get('articles', function() {
     return Article::all();
-});
+});*/
 
-Route::get('articles/{id}', function($id) {
+/*Route::get('articles/{id}', function($id) {
     return Article::find($id);
 });
 
@@ -40,14 +40,16 @@ Route::put('articles/{id}', function(Request $request, $id) {
 Route::delete('articles/{id}', function($id) {
     Article::find($id)->delete();
     return 204;
-});
+});*/
 
-/*Route::get('articles', 'App/Http/Controllers/ArticleController@index');
 
-Route::get('articles/{article}', 'App/Http/Controllers/ArticleController@show');
+Route::get('articles', 'App\Http\Controllers\ArticleController@index');
 
-Route::post('articles', 'App/Http/Controllers/ArticleController@store');
+Route::get('articles/{article}', 'App\Http\Controllers\ArticleController@show');
 
-Route::put('articles/{article}', 'App/Http/Controllers/ArticleController@update');
+Route::post('articles', 'App\Http\Controllers\ArticleController@store');
 
-Route::delete('articles/{article}', 'App/Http/Controllers/ArticleController@delete');*/
+Route::put('articles/{article}', 'App\Http\Controllers\ArticleController@update');
+
+Route::delete('articles/{article}', 'App\Http\Controllers\ArticleController@delete');
+
